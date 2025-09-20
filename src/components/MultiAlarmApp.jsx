@@ -308,10 +308,6 @@ Press OK to stop alarm.
 
           </div>
         </section>
-
-        <footer className="mt-8 text-center text-xs text-gray-500">
-          Built with ❤️ — demo alarm app. LocalStorage used for persistence. Refresh to test persistence.
-        </footer>
       </div>
     </div>
   );
