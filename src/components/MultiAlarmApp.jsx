@@ -58,13 +58,6 @@ export default function MultiAlarmApp() {
     return () => clearInterval(interval)
   }, [alarms, audioUnlocked])
 
-  // разблокировка звука
-  function unlockAudio() {
-    // проиграем короткий звук
-    const a = new Audio(uploadedSounds[0]?.url || '/beep.mp3')
-    a.play().catch(() => {})
-    setAudioUnlocked(true)
-  }
 
   function triggerAlarm(alarm) {
     alert(`Будильник: ${alarm.label || alarm.time}`)
