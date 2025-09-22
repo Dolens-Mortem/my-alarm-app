@@ -16,6 +16,17 @@ export default function MultiAlarmApp() {
 
   // 🔊 состояние разблокировки звука
   const [audioUnlocked, setAudioUnlocked] = useState(false)
+  // в начале MultiAlarmApp.jsx
+  const testAudioRef = useRef(new Audio('/beep.mp3')); // beep.mp3 в public
+
+  function unlockAudio() {
+    testAudioRef.current.play().then(() => {
+      setAudioUnlocked(true);
+      testAudioRef.current.pause();
+      testAudioRef.current.currentTime = 0;
+    }).catch(err => console.log('Не удалось разблокировать звук', err));
+  }
+
 
   const audioRefs = useRef({})
 
